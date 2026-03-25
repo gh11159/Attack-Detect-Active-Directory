@@ -4,7 +4,7 @@ AS-REP Roasting (T1558.004) targets Active Directory accounts that have Kerberos
 ***Lab Setup***
 
 GUI: `Win + r` -> `dsa.msc` Create a new user in the desired FQDN.
-`Right click the user -> Properties -> Account Tab` under `Account Options` check `Do Not Require Kerberos preauthentication`![[Active Directory/AS-REP Roasting/dsa.msc.png]]
+`Right click the user -> Properties -> Account Tab` under `Account Options` check `Do Not Require Kerberos preauthentication`![Description](Screenshots/dsa.msc.png)
 
 
 CLI: Run Powershell as administrator. 
@@ -14,7 +14,7 @@ Creating the user: `New-ADUser -Name "asreppeduser" -SamAccountName "asreppeduse
 Disable Pre-Auth:`Set-ADAccountControl -Identity "asreppeduser" -DoesNotRequirePreAuth $true`
 
 Verify: `Get-ADUser -Identity "asreppeduser" -Properties DoesNotRequirePreAuth | Select-Object SamAccountName, DoesNotRequirePreAuth`
-![[Powershell create New User.png]]
+![Description](Screenshots/Powershell%20create%20New%20User.png)
 
 
 ***Attack***
