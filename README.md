@@ -6,7 +6,7 @@ attack techniques, detection strategies, and mitigations.
 ## Lab Environment
 - **Domain:** REDTEAM.LOCAL
 - **Domain Controller:** AD-DC01 (Windows Server 2022)
-- **Attack Platform:** Kali Linux
+- **Attack Platform:** Kali Linux, Windows
 - **SIEM:** Wazuh
 
 ## Detection Approach
