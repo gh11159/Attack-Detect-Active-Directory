@@ -6,7 +6,7 @@ From Powershell:`Get-ADDomain | Select-Object DomainSID`
 ![[Get Domain SID.png|548]]
 
 From kali: `nxc ldap $IP -u "evil.user" -p "Password123" --get-sid`
-![Description[Screenshots/Kali linux Netexec.png|601]]
+![Description(Screenshots/Kali linux Netexec.png|601)]
 
 **Attack**
 
