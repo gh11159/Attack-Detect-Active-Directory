@@ -21,7 +21,7 @@ Exporting the Ticket for later use.
 
 Getting a shell as the Administrator user.
 `impacket-psexec -k -no-pass -dc-ip $IP redteam.local/Administrator@AD-DC01.redteam.local`
-![Description(Active Directory/Golden Ticket/Screenshots/Kali linux impacket.png)]
+![Description](/Screenshots/Kali%20linux%20impacket.png)
 
 
 **Detection**
@@ -41,7 +41,7 @@ Custom Wazuh Rule
 ```
 
 Wazuh Detection
-![[Active Directory/Golden Ticket/screenshots/Wazuh Detection.png]]
+![Description](/Screenshots/Wazuh%20Detection.png)
 
 | Field                  | Value                         | Meaning                 |
 | ---------------------- | ----------------------------- | ----------------------- |
