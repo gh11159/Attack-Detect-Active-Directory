@@ -3,7 +3,7 @@ A Golden Ticket (T1558.001) is a **forged Kerberos TGT** signed with the **KRBTG
 **Lab Setup**
 This Attack Uses Artifacts obtained from prior DCSync Attack.
 From Powershell:`Get-ADDomain | Select-Object DomainSID`
-![Description](Screenshots/GetDomainSID.png)
+![Description](Screenshots/Get%20Domain%20SID.png)
 
 From kali: `nxc ldap $IP -u "evil.user" -p "Password123" --get-sid`
 ![Description](Screenshots/Kali%20linux%20Netexec.png)
