@@ -16,8 +16,3 @@ Each entry includes:
 - Custom Wazuh detection rules
 - MITRE ATT&CK mapping
 - Mitigations and remediations
-
-## Tools Used
-**Offensive:** Impacket, Mimikatz, Rubeus, NetExec, Evil-WinRM
-
-**Defensive:** Wazuh SIEM, Windows Event Logs, Custom Detection Rules
