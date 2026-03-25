@@ -1,7 +1,7 @@
 Kerberoasting (T1558.003) abuses the Kerberos protocol by allowing any authenticated domain user to request TGS tickets for accounts with SPNs registered. These tickets are encrypted with the service account's password hash and can be cracked offline. If the service account has a weak password, an attacker can obtain plaintext credentials without ever touching the target system.
 
 **Lab Setup**
-GUI:Open `dsa.msc` via Win + R, navigate to your domain FQDN → Users → Right-click → New → User. Create a name for the service account e.g. `svc_web1`![[Active Directory/Kerberoasting/dsa.msc.png]]. Then open `adsiedit.msc` via Win + R → Default Naming Context → DC=redteam, DC=local → Users → Right-click the created user → Properties → Attribute Editor → find `servicePrincipalName` → double-click → Add a value in the following format:
+GUI:Open `dsa.msc` via Win + R, navigate to your domain FQDN → Users → Right-click → New → User. Create a name for the service account e.g. `svc_web1`![Description](Screenshots/dsa.msc.png) Then open `adsiedit.msc` via Win + R → Default Naming Context → DC=redteam, DC=local → Users → Right-click the created user → Properties → Attribute Editor → find `servicePrincipalName` → double-click → Add a value in the following format:
 
 ```
 TYPE_OF_SERVICE/SERVICE_NAME.FQDN
