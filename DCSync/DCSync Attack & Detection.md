@@ -15,7 +15,7 @@ Grant The Permissions: `dsacls.exe "DC=redteam,DC=local" /G "redteam.local\dcrep
 
 Verify: `(Get-Acl AD:\DC=redteam,DC=local).Access | Where-Object {$_.IdentityReference -eq "REDTEAM\dcreplicate"} | Select-Object ActiveDirectoryRights, IdentityReference | fl`
 
-![Description](Windows%20CLI%20Add%20priv.png)
+![Description](Screenshots/Windows%20CLI%20Add%20priv.png)
 
 
 **Attack**
